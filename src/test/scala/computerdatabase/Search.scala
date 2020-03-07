@@ -2,6 +2,9 @@ package computerdatabase
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
+/**
+ * Basic Search with hard coded data
+ */
 object Search {
 
   val search = exec(http("Home") // let's give proper names, as they are displayed in the reports
@@ -13,6 +16,28 @@ object Search {
     .exec(http("Select")
       .get("/computers/6"))
     .pause(3)
+}
+
+
+/**
+ * Search with data feeder
+ */
+object SearchWithFeeder {
+
+  val feeder = csv("data/search.csv").random
+
+  val search = exec(http("Home") // let's give proper names, as they are displayed in the reports
+    .get("/"))
+    .pause(1)
+    .feed(feeder)
+    .exec(http("Search")
+      .get("/computers?f=${searchCriterion}")
+      .check(css("a:contains('${searchComputerName}')", "href").saveAs("computerURL"))
+    )
+    .pause(1)
+    .exec(http("Select")
+      .get("${computerURL}"))
+    .pause(1)
 }
 
 /**

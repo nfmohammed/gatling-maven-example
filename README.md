@@ -11,6 +11,8 @@ Commands:
 
     $ mvn gatling:test  (runs all simulations)
     $ mvn gatling:test -Dgatling.simulationClass=computerdatabase.Example1BasicSimulation
+    $ mvn gatling:test -Dgatling.simulationClass=computerdatabase.Example2Search
+    $ mvn gatling:test -Dgatling.simulationClass=computerdatabase.Example3FeederFile
 
 Notes:
 
@@ -29,3 +31,7 @@ References:
 - Advanced: https://gatling.io/docs/current/advanced_tutorial#advanced-tutorial
 
 - Maven Setup: https://gatling.io/docs/2.2/extensions/maven_plugin/
+
+- Data Feeder: https://gatling.io/docs/current/session/feeder/#feeder
+
+- HTTP Checks: https://gatling.io/docs/current/http/http_check/#http-check

@@ -4,7 +4,11 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
-class BasicSimulation extends Simulation {
+/**
+ * This is a very basic example of what gatling script looks like.
+ * In coming examples, we will split Scenarios and Data in their own files.
+ */
+class Example1BasicSimulation extends Simulation {
 
   val httpProtocol = http
     .baseUrl("http://computer-database.gatling.io") // Here is the root for all relative URLs

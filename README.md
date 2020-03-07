@@ -1,15 +1,20 @@
 gatling-maven-plugin-demo
 =========================
 
-Simple showcase of a maven project using the gatling-maven-plugin.
+Prerequisites:
 
-To test it out, simply execute the following command:
+- Java8 or Java11
+- Scala 2.12. Note: Gatling not compatible with 2.11 or 2.13
+- Explicitly Set JAVA_HOME if needed
 
-    $mvn gatling:test -Dgatling.simulationClass=computerdatabase.BasicSimulation
+Commands:
 
-or simply:
+    $ mvn gatling:test  (runs all simulations)
+    $ mvn gatling:test -Dgatling.simulationClass=computerdatabase.Example1BasicSimulation
 
-    $mvn gatling:test
+Notes:
+
+- By default, Gatling runs single simulation. To enable multiple simulation run, use plugin configuration `runMultipleSimulations`, see `pom.xml`   
 
 References:
 
@@ -20,3 +25,7 @@ References:
 - Installation: https://gatling.io/docs/current/installation#installation
 
 - QuickStart: https://gatling.io/docs/current/quickstart/
+
+- Advanced: https://gatling.io/docs/current/advanced_tutorial#advanced-tutorial
+
+- Maven Setup: https://gatling.io/docs/2.2/extensions/maven_plugin/

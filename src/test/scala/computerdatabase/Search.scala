@@ -80,7 +80,7 @@ object Edit {
         .formParam("name", "abc mouse club house")
         .formParam("introduced", "2020-03-07")
         .formParam("discontinued", "2024-03-09")
-        .formParam("company", "my company")
+        .formParam("company", "1")
         .check(status.is(session => 200))
     )
 

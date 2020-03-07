@@ -16,9 +16,13 @@ Commands:
 
 Notes:
 
-- By default, Gatling runs single simulation. To enable multiple simulation run, use plugin configuration `runMultipleSimulations`, see `pom.xml`   
+- By default, Gatling runs single simulation. To enable multiple simulation run, use plugin configuration `runMultipleSimulations`, see `pom.xml`
+
+- To log failing requests, change log level in logback-test.xml file   
 
 References:
+
+- Gatling cheatsheet: https://worldline.github.io/gatling-cheatsheet/
 
 - Repo: https://github.com/gatling/gatling-maven-plugin-demo
 
@@ -35,3 +39,7 @@ References:
 - Data Feeder: https://gatling.io/docs/current/session/feeder/#feeder
 
 - HTTP Checks: https://gatling.io/docs/current/http/http_check/#http-check
+
+- Conditionals: https://gatling.io/docs/current/general/scenario/#scenario-conditions
+
+- Simulation setup: https://gatling.io/docs/current/general/simulation_setup

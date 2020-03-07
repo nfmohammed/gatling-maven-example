@@ -74,7 +74,14 @@ object Edit {
   val edit = exec(http("Form")
     .get("/computers/new"))
     .pause(1)
-    .exec(http("Post")
-      .post("/computers")
-      .check(status.is(session => 200)))
+    .exec(
+      http("Post")
+        .post("/computers")
+        .formParam("name", "abc mouse club house")
+        .formParam("introduced", "2020-03-07")
+        .formParam("discontinued", "2024-03-09")
+        .formParam("company", "my company")
+        .check(status.is(session => 200))
+    )
+
 }

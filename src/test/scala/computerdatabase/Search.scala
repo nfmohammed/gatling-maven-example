@@ -83,5 +83,26 @@ object Edit {
         .formParam("company", "1")
         .check(status.is(session => 200))
     )
-
 }
+
+/**
+ * Edit2: The check is made to fail intermittently.
+ * The random failures can be resolved with retries. See Example4Retries
+ */
+
+import java.util.concurrent.ThreadLocalRandom // 1
+object Edit2{
+  val edit = exec(http("Form")
+    .get("/computers/new"))
+    .pause(1)
+    .exec(
+      http("Post")
+        .post("/computers")
+        .formParam("name", "abc mouse club house")
+        .formParam("introduced", "2020-03-07")
+        .formParam("discontinued", "2024-03-09")
+        .formParam("company", "1")
+        .check(status.is(session => 200 + ThreadLocalRandom.current.nextInt(2)))
+    )
+}
+

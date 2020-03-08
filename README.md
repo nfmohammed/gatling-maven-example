@@ -22,6 +22,8 @@ Notes:
 
 References:
 
+- General documentation: https://gatling.io/docs/current/general/
+
 - Gatling cheatsheet: https://worldline.github.io/gatling-cheatsheet/
 
 - Repo: https://github.com/gatling/gatling-maven-plugin-demo
